@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rect1</title>
+    <style>
+    	canvas{
+    		border:solid 1px black;
+    	}
+    </style>
+</head>
+
+<body onload="draw()">
+    <canvas id="tutorial" width="150" height="150">当前浏览器暂不支持canvas元素</canvas>
+    <script>
+    function draw() {
+        var canvas = document.getElementById("tutorial");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle="rgb(200,0,0)";
+            ctx.fillRect(10,10,130,130);
+
+            ctx.fillStyle="rgba(0,0,200,0.5)";
+            ctx.fillRect(30,30,55,50);
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rect2</title>
+</head>
+<body onload="draw()">
+	<canvas width="150" height="150" id="canvas">当前浏览器暂不支持canvas</canvas>
+	<script>
+		function draw(){
+			var canvas = document.getElementById("canvas");
+			if(canvas.getContext){
+				var ctx = canvas.getContext("2d");
+
+				ctx.fillRect(25,25,100,100);
+				ctx.clearRect(45,45,60,60);
+				ctx.strokeRect(60,60,30,30);
+				
+			}
+		}
+	</script>
+</body>
+</html>
