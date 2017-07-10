@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arc</title>
+</head>
+<body onload="draw()">
+	<canvas id="canvas" width="150" height="400">当前浏览器不支持canvas元素!</canvas>
+	<script>
+		function draw(){
+			var canvas = document.getElementById("canvas");
+			if(canvas.getContext){
+				var ctx = canvas.getContext("2d");
+
+				for(var i =0;i<4;i++){
+					for(var j = 0;j<3;j++){
+						ctx.beginPath();
+						var x = 25 + j*50;
+						var y = 25+ i*50;
+						var radius = 20;
+						var startAngle = 0;
+						var endAngle = Math.PI + (Math.PI*j)/2;
+						var anticolckwise = i%2==0 ? false : true;
+						ctx.arc(x,y,radius,startAngle,endAngle,anticolckwise);
+						if(i>1){
+							ctx.fill();
+						} else{
+							ctx.stroke();
+						}
+					}
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>
